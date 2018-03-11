@@ -25,8 +25,8 @@ public class MainActivity extends AppCompatActivity {
 
     public Drawer deviceAdd;
     SecondaryDrawerItem about, itemAdd;
-    public SwitchDrawerItem lamp, lightStrip, smartLightStrip, lamp1, lightStrip1, smartLightStrip1;
-    public ExpandableDrawerItem LampEX, SmartLightEX, SimpleLightEX;
+    public SwitchDrawerItem catA, catB, catC, catA1, catB1, catC1;
+    public ExpandableDrawerItem catAEX, catBEX, catCEX;
     Toolbar toolbar;
     //save our header or result
     private AccountHeader headerResult = null;
@@ -45,7 +45,7 @@ public class MainActivity extends AppCompatActivity {
         headerResult = new AccountHeaderBuilder()
                 .withActivity(this)
                 .withTranslucentStatusBar(true)
-                .withHeaderBackground(R.drawable.header2)
+                .withHeaderBackground(R.drawable.header)
                 .withSavedInstance(savedInstanceState).build();
 
         about = new SecondaryDrawerItem()
@@ -57,75 +57,74 @@ public class MainActivity extends AppCompatActivity {
                 .withIconColor(getResources().getColor(R.color.white))
                 .withIcon(FontAwesome.Icon.faw_plus);
 
-        lamp = new SwitchDrawerItem()
-                .withName("lamp")
+        catA = new SwitchDrawerItem()
+                .withName("catA")
                 .withIconColor(getResources().getColor(R.color.white))
                 .withOnCheckedChangeListener(onCheckedChangeListener)
                 .withChecked(true)
                 .withIcon(FontAwesome.Icon.faw_lightbulb_o);
 
-        smartLightStrip = new SwitchDrawerItem()
-                .withName("smartLightStrip")
+        catB = new SwitchDrawerItem()
+                .withName("catB")
                 .withIconColor(getResources().getColor(R.color.white))
                 .withOnCheckedChangeListener(onCheckedChangeListener)
                 .withChecked(true)
                 .withIcon(FontAwesome.Icon.faw_lightbulb_o);
 
-        lightStrip = new SwitchDrawerItem()
-                .withName("lightStrip")
-                .withIconColor(getResources().getColor(R.color.white))
-                .withOnCheckedChangeListener(onCheckedChangeListener)
-                .withChecked(true)
-                .withIcon(FontAwesome.Icon.faw_lightbulb_o);
-
-
-        lamp1 = new SwitchDrawerItem()
-                .withName("lamp2")
-                .withIconColor(getResources().getColor(R.color.white))
-                .withOnCheckedChangeListener(onCheckedChangeListener)
-                .withChecked(true)
-                .withIcon(FontAwesome.Icon.faw_lightbulb_o);
-
-        smartLightStrip1 = new SwitchDrawerItem()
-                .withName("smartLightStrip2")
-                .withIconColor(getResources().getColor(R.color.white))
-                .withOnCheckedChangeListener(onCheckedChangeListener)
-                .withChecked(true)
-                .withIcon(FontAwesome.Icon.faw_lightbulb_o);
-
-        lightStrip1 = new SwitchDrawerItem()
-                .withName("lightStrip2")
+        catC = new SwitchDrawerItem()
+                .withName("catC")
                 .withIconColor(getResources().getColor(R.color.white))
                 .withOnCheckedChangeListener(onCheckedChangeListener)
                 .withChecked(true)
                 .withIcon(FontAwesome.Icon.faw_lightbulb_o);
 
 
-        LampEX = new ExpandableDrawerItem()
-                .withName("LampEX")
+        catA1 = new SwitchDrawerItem()
+                .withName("catA1")
+                .withIconColor(getResources().getColor(R.color.white))
+                .withOnCheckedChangeListener(onCheckedChangeListener)
+                .withChecked(true)
+                .withIcon(FontAwesome.Icon.faw_lightbulb_o);
+
+        catB1 = new SwitchDrawerItem()
+                .withName("catB1")
+                .withIconColor(getResources().getColor(R.color.white))
+                .withOnCheckedChangeListener(onCheckedChangeListener)
+                .withChecked(true)
+                .withIcon(FontAwesome.Icon.faw_lightbulb_o);
+
+        catC1 = new SwitchDrawerItem()
+                .withName("catC1")
+                .withIconColor(getResources().getColor(R.color.white))
+                .withOnCheckedChangeListener(onCheckedChangeListener)
+                .withChecked(true)
+                .withIcon(FontAwesome.Icon.faw_lightbulb_o);
+
+        catAEX = new ExpandableDrawerItem()
+                .withName("catAEX")
                 .withIconColor(getResources().getColor(R.color.white))
                 .withSubItems(new SwitchDrawerItem()
-                        .withName("lightStrip")
+                        .withName("suba")
                         .withIconColor(getResources().getColor(R.color.white))
                         .withOnCheckedChangeListener(onCheckedChangeListener)
                         .withChecked(true)
                         .withIcon(FontAwesome.Icon.faw_lightbulb_o));
 
-        SmartLightEX = new ExpandableDrawerItem()
-                .withName("SmartLightEX")
+        catBEX = new ExpandableDrawerItem()
+                .withName("catBEX")
                 .withIconColor(getResources().getColor(R.color.white))
                 .withSubItems(new SwitchDrawerItem()
-                        .withName("smartLight")
+                        .withName("subb")
                         .withIconColor(getResources().getColor(R.color.white))
                         .withOnCheckedChangeListener(onCheckedChangeListener)
                         .withChecked(true)
                         .withIcon(FontAwesome.Icon.faw_lightbulb_o));
 
-        SimpleLightEX = new ExpandableDrawerItem()
-                .withName("SimpleLightEX")
+        catCEX = new ExpandableDrawerItem()
+                .withName("catCEX")
                 .withIconColor(getResources().getColor(R.color.white))
                 .withSubItems(new SwitchDrawerItem()
-                        .withName("SimpleLightEX")
+                        .withName("subc")
                         .withIconColor(getResources().getColor(R.color.white))
                         .withOnCheckedChangeListener(onCheckedChangeListener)
                         .withChecked(true)
@@ -139,11 +138,11 @@ public class MainActivity extends AppCompatActivity {
                 .withAccountHeader(headerResult)
                 .withScrollToTopAfterClick(true)
                 .withFooterDivider(true)
-                .addDrawerItems(lamp, smartLightStrip, lightStrip)
+                .addDrawerItems(catA, catB, catC)
                 .addDrawerItems(new DividerDrawerItem())
-                .addDrawerItems(LampEX, SmartLightEX, SimpleLightEX)
+                .addDrawerItems(catAEX, catBEX, catCEX)
                 .addDrawerItems(new DividerDrawerItem())
-                .addDrawerItems(lamp1, smartLightStrip1, lightStrip1)
+                .addDrawerItems(catA1, catB1, catC1)
                 .addDrawerItems(new DividerDrawerItem())
                 .addStickyDrawerItems(about, itemAdd)
                 .withOnDrawerNavigationListener(new Drawer.OnDrawerNavigationListener() {
